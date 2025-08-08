@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.bg-custon-g {
+  background-color: #f9fdfa;
+}
+.bg-custon-g1 {
+  background-color: #a0eda8;
+}
+.bg-custon-b {
+  background-color: #f5f7ff;
+}
+.custom-input {
+  @apply mt-1 w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none;
+}
+.custom-btn-01 {
+  @apply flex items-center gap-3 w-44 text-gray-800 font-semibold py-2 px-4 rounded-2xl transition;
+}
+
+.custom-sidebar-item {
+  @apply flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-purple-100 hover:border-l-2 hover:border-purple-600 text-gray-600 font-medium  transition-colors duration-200;
+}
+.custom-sidebar-text {
+  @apply absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50 md:hidden;
+}
