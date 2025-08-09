@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Package } from "lucide-react";
 
@@ -11,7 +11,7 @@ const ToyCardSkeleton = () => (
         <div className="w-16 h-3 bg-slate-300 rounded mx-auto skeleton-shimmer"></div>
       </div>
     </div>
-    
+
     <div className="p-5">
       {/* Title and category skeleton */}
       <div className="mb-3">
@@ -19,7 +19,7 @@ const ToyCardSkeleton = () => (
         <div className="h-3 bg-slate-300 rounded w-1/2 mb-1 skeleton-shimmer"></div>
         <div className="h-3 bg-indigo-200 rounded-full w-1/4 skeleton-shimmer"></div>
       </div>
-      
+
       {/* Price and stock skeleton */}
       <div className="flex justify-between items-end mb-4">
         <div className="flex flex-col">
@@ -31,7 +31,7 @@ const ToyCardSkeleton = () => (
           <div className="h-3 bg-slate-300 rounded w-12 skeleton-shimmer"></div>
         </div>
       </div>
-      
+
       {/* Buttons skeleton */}
       <div className="flex gap-2">
         <div className="flex-1 h-8 bg-gradient-to-r from-slate-300 to-slate-400 rounded-lg skeleton-shimmer"></div>
@@ -42,7 +42,7 @@ const ToyCardSkeleton = () => (
 );
 
 const HeaderSkeleton = () => (
-  <div className="text-center mb-12">
+  <div className=" mb-12">
     <div className="h-10 bg-slate-300 rounded w-64 mx-auto mb-4 skeleton-shimmer"></div>
     <div className="h-5 bg-slate-300 rounded w-80 mx-auto mb-6 skeleton-shimmer"></div>
   </div>
@@ -57,11 +57,11 @@ const ProductCountSkeleton = () => (
 
 export default function ToyPageSkeleton({ cardCount = 12 }) {
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen ">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Header Skeleton */}
         <HeaderSkeleton />
-        
+
         {/* Product count skeleton */}
         <ProductCountSkeleton />
 

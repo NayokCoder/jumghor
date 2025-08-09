@@ -9,6 +9,15 @@ export const fetchToys = async () => {
   return data.data[0] || [];
 };
 
+export const fetchToyById = async (id) => {
+  const res = await fetch(`http://localhost:5000/api/get-product/${id}`);
+  const data = await res.json();
+  if (!data.success) {
+    throw new Error("Failed to fetch toy");
+  }
+  return data.data;
+};
+
 export const useToys = () => {
   return useQuery({
     queryKey: ["toys"],

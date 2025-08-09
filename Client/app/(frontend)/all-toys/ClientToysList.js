@@ -3,6 +3,7 @@
 import { fetchToys } from "@/app/Lib/hooks/useToys";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import { Star, ShoppingCart, Eye, Package } from "lucide-react";
 
@@ -64,8 +65,8 @@ const ToyCard = ({ toy }) => {
             <p className="text-sm font-medium text-slate-500">No Image Available</p>
           </div>
         </div>
-        {toy.discount_price && <div className="absolute top-3 left-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">SALE</div>}
-        <div className="absolute top-3 right-3 bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-full p-2 shadow-lg">
+        {toy.discount_price && <div className="absolute top-3 left-3  text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">On Sale</div>}
+        <div className="absolute top-3 right-3  backdrop-blur-sm rounded-full p-2 shadow-lg">
           <div className="flex items-center text-white text-sm">
             <Star className="w-4 h-4 fill-amber-400 text-amber-400 mr-1" />
             <span>{toy.rating || "4.5"}</span>
@@ -75,20 +76,20 @@ const ToyCard = ({ toy }) => {
 
       <div className="p-5">
         <div className="mb-3">
-          <h3 className="text-lg font-bold text-slate-800 line-clamp-2 mb-2">{toy.title}</h3>
-          <p className="text-sm text-slate-600 capitalize">{toy.categories || "Toys"}</p>
-          {toy.ages && toy.ages !== "0" && <p className="text-xs text-indigo-600 font-medium bg-indigo-50 px-2 py-1 rounded-full inline-block">Age: {toy.ages}+</p>}
+          <h3 className="text-md font-bold text-gray-800 line-clamp-2 mb-2">{toy.title}</h3>
+
+          {toy.ages && toy.ages !== "0" && <p className="text-xs text-gray-600 font-medium bg-gray-50 px-2 py-1 rounded-full inline-block">Age: {toy.ages}+</p>}
         </div>
 
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col">
-            {toy.discount_price ? (
+            {toy.price ? (
               <>
-                <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">${toy.discount_price}</span>
-                <span className="text-sm text-slate-500 line-through">${toy.price}</span>
+                <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">৳ {toy.price}</span>
+                <span className="text-sm text-slate-500 line-through">৳{toy.discount_price}</span>
               </>
             ) : (
-              <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">${toy.price}</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">${toy.discount_price}</span>
             )}
           </div>
           <div className="flex items-center text-sm text-slate-600 bg-slate-100 px-2 py-1 rounded-full">
@@ -98,10 +99,10 @@ const ToyCard = ({ toy }) => {
         </div>
 
         <div className="flex gap-2">
-          <button className="custom-btn-view bg-custon-g1 ">
+          <Link href={`/all-toys/${toy.product_id}`} className="custom-btn-view bg-custon-C1">
             <Eye className="w-4 h-4 " />
             View
-          </button>
+          </Link>
           <button className="custom-btn-cart bg-custon-C2">
             <ShoppingCart className="w-4 h-4" />
             Add to Cart
@@ -206,11 +207,6 @@ export default function ClientToysList({ initialToys }) {
 
   return (
     <>
-      <div className="flex items-center justify-center text-sm text-gray-500 mb-8">
-        <Package className="w-4 h-4 mr-2" />
-        <span>{toys?.length || 0} products available</span>
-      </div>
-
       {toys?.length === 0 ? (
         <div className="text-center py-12">
           <Package className="w-16 h-16 text-gray-400 mx-auto mb-4" />
