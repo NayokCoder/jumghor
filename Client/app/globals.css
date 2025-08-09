@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import "./Custom-Css/skeleton.css";
 
 .bg-custon-g {
   background-color: #f9fdfa;
@@ -22,4 +23,25 @@
 }
 .custom-sidebar-text {
   @apply absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs rounded px-2 py-1 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50 md:hidden;
+}
+.custom-btn-cart {
+  @apply btn rounded-2xl text-white;
+}
+.custom-btn-view {
+  @apply btn rounded-2xl text-white;
+}
+
+.bg-custon-C1 {
+  background-color: #ac1754;
+}
+.bg-custon-C2 {
+  background-color: #e53888;
+}
+
+.bg-custon-C3 {
+  background-color: #f5cbcb;
+}
+
+.bg-custon-C4 {
+  background-color: #ffeaea;
 }
