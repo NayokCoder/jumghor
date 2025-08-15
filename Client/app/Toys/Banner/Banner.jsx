@@ -70,11 +70,11 @@ export default function Banner() {
   );
 
   return (
-    <div ref={sliderRef} className="keen-slider relative h-[70vh] max-w-screen-xl mx-auto overflow-hidden rounded-xl shadow-lg">
+    <div ref={sliderRef} className="keen-slider relative w-[95%] max-w-full min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh]  xl:min-h-[80vh] mx-auto overflow-hidden rounded-xl shadow-lg">
       {slides.map(({ id, title, description, image }) => (
         <div key={id} className="keen-slider__slide relative bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: `url(${image})` }}>
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="relative z-10 max-w-2xl text-center text-white px-6">
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-500/50 [from-position:40%] via-black/50 to-teal-400/50 backdrop-blur-xs"></div>
+          <div className="relative z-10 max-w-2xl  text-white px-6">
             <h2 className="text-4xl md:text-5xl font-extrabold drop-shadow-lg">{title}</h2>
             <p className="mt-4 text-lg md:text-xl drop-shadow-md">{description}</p>
             <button className="mt-6 px-6 py-3 bg-pink-600 hover:bg-pink-700 rounded-full font-semibold transition">Shop Now</button>
