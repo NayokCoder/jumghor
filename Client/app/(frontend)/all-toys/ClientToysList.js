@@ -4,12 +4,14 @@ import { fetchToys } from "@/app/Lib/hooks/useToys";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Star, ShoppingCart, Eye, Package } from "lucide-react";
+import { CartContext } from "@/app/Components/Context/CardContext";
 
 const getToys = fetchToys();
 
 const ToyCard = ({ toy }) => {
+  const { addToCart } = useContext(CartContext);
   // Parse images - handle both array and JSON string formats
   let images = [];
   let firstImage = null;
@@ -103,7 +105,7 @@ const ToyCard = ({ toy }) => {
             <Eye className="w-4 h-4 " />
             View
           </Link>
-          <button className="custom-btn-cart bg-custon-C2">
+          <button onClick={() => addToCart(toy)} className="custom-btn-cart bg-custon-C2 ">
             <ShoppingCart className="w-4 h-4" />
             Add to Cart
           </button>
