@@ -10,7 +10,7 @@ const AddCart = () => {
   const itemCount = cart.length;
   const subtotal = cart.reduce((sum, item) => sum + (item.price || 0), 0);
   return (
-    <div className="drawer drawer-end">
+    <div className="relative drawer-end">
       <input id="cart-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Cart button */}
@@ -22,16 +22,16 @@ const AddCart = () => {
       <div className="drawer-side">
         <label htmlFor="cart-drawer" className="drawer-overlay"></label>
         <div className="menu bg-base-100 text-base-content min-h-full w-80 p-4">
-          <h2 className="text-xl font-bold mb-4">Your Cart ({itemCount} items)</h2>
-          <div className="flex flex-col gap-3 mb-4 max-h-[70vh] overflow-y-auto">
+          <h2 className="text-xl font-medium mb-4">Shoping Cart </h2>
+          <div className="flex flex-col gap-3 my-6 max-h-[70vh] overflow-y-auto no-scrollbar">
             {cart.length === 0 ? (
               <p className="text-gray-500">Your cart is empty</p>
             ) : (
               cart.map((item) => (
                 <div key={item.id} className="flex items-center gap-3 border-b pb-2">
-                  <img src={item.image} alt={item.name} className="w-12 h-12 object-cover rounded" />
+                  <img src={item.images} alt={item.name} className="w-16 h-16 object-cover rounded" />
                   <div className="flex-1">
-                    <p className="font-medium text-gray-800">{item.name}</p>
+                    <p className="font-medium text-gray-800">{item.title}</p>
                     <p className="text-sm text-gray-500">৳ {item.price}</p>
                   </div>
                 </div>
