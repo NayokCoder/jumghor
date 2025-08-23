@@ -4,7 +4,7 @@ import AddCart from "./AddCart";
 const Navbar = () => {
   return (
     <section>
-      <div className="navbar max-w-screen-xl mx-auto ">
+      <div className="navbar max-w-7xl mx-auto ">
         <div className="navbar-start ">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,38 +33,35 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Jumghor</a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Toys</a>
-            </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
-        </div>
-        <div className="navbar-end">
+          <a className=" text-xl font-medium">Jumghor</a>
           <button className="btn btn-ghost btn-circle">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {" "}
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />{" "}
             </svg>
           </button>
+        </div>
+
+        <div className="navbar-center hidden lg:flex">
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal hover:bg-none px-1">
+              <li>
+                <a>HOME</a>
+              </li>
+              <li>
+                <a>TOYS</a>
+              </li>
+              <li>
+                <a>ORGANIC FOOD</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="navbar-end">
+          <div className="text-xs font-medium">SIGN IN</div>
+          <div className="divider lg:divider-horizontal"></div>
+          <div className="text-xs font-medium">SIGN UP</div>
           <button className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

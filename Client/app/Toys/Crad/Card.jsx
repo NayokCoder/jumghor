@@ -50,7 +50,7 @@ export default function Card() {
   const [activeTab, setActiveTab] = useState("New Arrivals");
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-10">
+    <section className="max-w-6xl mx-auto px-4 py-10">
       {/* Tabs */}
       <div className="flex items-center justify-center gap-8 mb-8 text-lg font-medium">
         {Object.keys(productsData).map((tab) => (
